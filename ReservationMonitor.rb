@@ -1,6 +1,3 @@
-# require 'phantomjs'
-# require 'rubygems'
-
 SLEEPTIME = 45
 USER = 'Sarah' #[(print 'Username: '), gets.rstrip][1]
 PASS = 'NotRequired' #[(print 'Password: '), gets.rstrip][1]
@@ -17,8 +14,6 @@ begin
 	print "#$iteration) #{@iterationTime} -- Executing - "
 	
     # run phantomjs
-	#Phantomjs.run('./disney_phantom.js') { |line| puts @line }
-	#Phantomjs.run('./disney_phantom.js')
     @status = %x[#{PHANTOMJSPATH} #{PHANTOMSCRIPT}]
 	
     if @status.include? 'ERROR'
@@ -39,12 +34,3 @@ begin
 	$iteration += 1
 	sleep SLEEPTIME
 end while 1
-
-
-
-
-
-# Phantomjs.run('') # => returns stdout
-
-# take a block to receive each line of output
-# Phantomjs.run('./disney_phantom.js') { |line| puts @line }
