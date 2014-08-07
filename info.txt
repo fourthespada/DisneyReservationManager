@@ -1,0 +1,12 @@
+// BROWSER vs PHANTOMJS Difference: *-alpha-default vs *-default
+//Find if ul-id has descendant div with the right aria-label
+//if($('ul#withAvailability-default > li > div[aria-label=lookingFor]').length > 0) {
+//alert('found');
+//}
+
+// BROWSER vs PHANTOMJS Difference:
+//                //initiate Search
+//                    document.querySelector('#diningAvailabilityForm-searchDate').value = '11/16/2014';
+//                    document.querySelector('#searchTime-wrapper .rawOption').innerHTML = '<span class="accessibleText hidden">Time&nbsp;required - Opens menu - </span>Dinner';
+//                    document.querySelector('#partySize-wrapper .rawOption').innerHTML = '<span class="accessibleText hidden">Party Size&nbsp;required - Opens menu - </span>3';
+//                    document.querySelector('#searchButton').click();
