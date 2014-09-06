@@ -10,7 +10,7 @@ end
 
 
 puts "Hello #{USER}"
-puts PHANTOMSCRIPTARGS
+puts "Asking Mickey for #{PHANTOMSCRIPTARGS}"
 
 $errors = 0
 $iteration = 1
