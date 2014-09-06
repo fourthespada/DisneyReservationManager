@@ -3,7 +3,14 @@ USER = 'Sarah' #[(print 'Username: '), gets.rstrip][1]
 PASS = 'NotRequired' #[(print 'Password: '), gets.rstrip][1]
 PHANTOMJSPATH = "c:\\Development\\phantomjs-1.9.7\\phantomjs.exe"
 PHANTOMSCRIPT = ".\\disney_phantom.js"
-puts "Hello " + USER
+PHANTOMSCRIPTARGS = ""
+ARGV.each do|a|
+    PHANTOMSCRIPTARGS << ' "' + a + '"'
+end
+
+
+puts "Hello #{USER}"
+puts PHANTOMSCRIPTARGS
 
 $errors = 0
 $iteration = 1
@@ -14,7 +21,7 @@ begin
 	print "#$iteration) #{@iterationTime} -- Executing - "
 	
     # run phantomjs
-    @status = %x[#{PHANTOMJSPATH} #{PHANTOMSCRIPT}]
+    @status = %x[#{PHANTOMJSPATH} #{PHANTOMSCRIPT} #{PHANTOMSCRIPTARGS}]
 	
     if @status.include? 'ERROR'
         $errors += 1

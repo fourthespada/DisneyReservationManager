@@ -21,10 +21,23 @@ var lookingFor = [
 //    "Tusker House Restaurant",
     "---"];
 
-var sdate = '11/21/2014';
-var stime = 'Dinner';
 var spartysize = '3';
+var stime = 'Dinner';
+var sdate = '11/21/2014';
 var url = 'https://disneyworld.disney.go.com/dining/#/character-dining/';
+
+// -- OVERRIDE DEFAULT VALUES IF ARGUMENTS ARE SUPPLIED -- //
+var system = require('system');
+var args = system.args;
+if (args.length > 4) {
+    spartysize = args[1];
+    stime = args[2];
+    sdate = args[3];
+    lookingFor = [];
+    for (var i = 4; i < args.length; i++) {
+        lookingFor.push(args[i]);
+    }
+}
 
 // -- CONFIGURABLES END -- //
 
